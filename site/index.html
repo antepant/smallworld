@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smallworld summary</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%86%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main-wrap">
+    <header class="head">
+      <div>
+        <h1 class="page-title">🏆 Smallworld summary</h1>
+        <div class="page-sub">Rosterrier · FPL · Allsvenskan — Anders, Micke, Danne</div>
+      </div>
+      <button class="theme-btn" id="themeBtn" type="button" title="Switch light/dark theme" aria-label="Switch light/dark theme">◐</button>
+    </header>
+
+    <section class="top-card">
+      <h2 class="top-card-title">Season highlights</h2>
+      <div class="top-grid" id="highlights"><p class="loading">Loading data…</p></div>
+    </section>
+
+    <div class="legend-row" id="legend"></div>
+
+    <nav class="tabs" id="tabs" role="tablist" aria-label="Tables"></nav>
+    <div class="tab-content" id="tabContent"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
