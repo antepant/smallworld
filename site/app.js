@@ -74,12 +74,12 @@ function podiumData(rows, rankCol) {
     .slice(0, 3);
 }
 
-// Number of seasons each manager won.
+// Number of seasons each manager won (every manager who has played, so zero wins are listed too).
 function marathonWins(rows, rankCol) {
   const best = {};
   for (const r of rows) if (!best[r.Season] || r[rankCol] < best[r.Season][rankCol]) best[r.Season] = r;
-  const wins = {};
-  for (const r of Object.values(best)) wins[r.Manager] = (wins[r.Manager] || 0) + 1;
+  const wins = Object.fromEntries(rows.map((r) => [r.Manager, 0]));
+  for (const r of Object.values(best)) wins[r.Manager] += 1;
   return Object.entries(wins).map(([Manager, Wins]) => ({ Manager, Wins }))
     .sort((a, b) => b.Wins - a.Wins || cmp(a.Manager, b.Manager));
 }
